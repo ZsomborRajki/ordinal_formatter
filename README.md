@@ -2,6 +2,11 @@
 
 A simple flutter plugin to convert numbers into ordinal string using the built in native iOS and android libraries.
 
+Example:
+```dart
+final ordinalString = await OrdinalFormatter().format(2); // ordinalString value: '2nd'
+```
+
 ## Usage
 ```dart
 import 'package:ordinal_formatter/ordinal_formatter.dart';
