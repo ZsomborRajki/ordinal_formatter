@@ -1,3 +1,7 @@
+## 0.0.3
+
+* fix typo in description
+
 ## 0.0.2
 
 * update readme and project description

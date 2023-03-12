@@ -24,4 +24,4 @@ try {
 - [X] Android Support
 
 ## TODO
-- [] web support
+- web support
