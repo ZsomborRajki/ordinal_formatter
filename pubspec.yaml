@@ -1,5 +1,5 @@
 name: ordinal_formatter
-description: A new Flutter plugin project.
+description: Covert numbers into their localised ordinal form
 version: 0.0.1
 homepage: https://github.com/ZsomborRajki/ordinal_formatter
 
