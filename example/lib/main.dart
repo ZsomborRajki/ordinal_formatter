@@ -30,8 +30,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      ordinalNumber =
-          await OrdinalFormatter().format(2, 'en_US') ?? 'Unknown number';
+      ordinalNumber = await OrdinalFormatter().format(9) ?? 'Unknown number';
     } on PlatformException catch (e) {
       ordinalNumber = 'Formatting failed: $e';
     }

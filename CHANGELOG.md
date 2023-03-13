@@ -1,3 +1,7 @@
+## 0.0.4
+
+* kotlin code simplification
+
 ## 0.0.3
 
 * fix typo in description

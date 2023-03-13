@@ -28,15 +28,15 @@ class OrdinalFormatterPlugin: FlutterPlugin, MethodCallHandler {
       return
     }
 
-    val number = call.argument<Any>("number")?.let { it.toString().toIntOrNull() }
+    val number = call.argument<Int>("number")
     ?: run { 
       result.error("INVALID_NUMBER", "invalid number format", null)
       return
     }
 
-    val locale = call.argument<Any>("locale_code")?.let { 
+    val locale = call.argument<String?>("locale_code")?.let { 
       // BCP 47 standard uses "-" instead of "_"
-      val localCode = it.toString().replace("_", "-")
+      val localCode = it.replace("_", "-")
       Locale.forLanguageTag(localCode)
     } ?: Locale.getDefault()
 
@@ -52,6 +52,6 @@ class OrdinalFormatterPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   private fun format(number: Int, locale: Locale): String {
-    return MessageFormat("{0, ordinal}", locale).format(arrayOf(number.toInt()))
+    return MessageFormat("{0, ordinal}", locale).format(arrayOf(number))
   }
 }
