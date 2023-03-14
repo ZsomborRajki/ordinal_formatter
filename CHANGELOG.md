@@ -1,3 +1,7 @@
+## 0.0.5
+
+* update readme example
+
 ## 0.0.4
 
 * kotlin code simplification

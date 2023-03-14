@@ -4,7 +4,7 @@ A simple flutter plugin to convert numbers into ordinal string using the built i
 
 Example:
 ```dart
-final ordinalString = await OrdinalFormatter().format(2); // ordinalString value: '2nd'
+final ordinalString = await OrdinalFormatter().format(2) ?? ''; // ordinalString value: '2nd'
 ```
 
 ## Usage
