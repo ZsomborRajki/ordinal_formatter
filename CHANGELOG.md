@@ -1,3 +1,7 @@
+## 0.0.7
+
+* update image url to be shown in pub get
+
 ## 0.0.6
 
 * add example image
