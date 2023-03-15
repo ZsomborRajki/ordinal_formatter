@@ -1,3 +1,7 @@
+## 0.0.8
+
+* cdn image url
+
 ## 0.0.7
 
 * update image url to be shown in pub get
