@@ -7,7 +7,7 @@ Example:
 final ordinalString = await OrdinalFormatter().format(2) ?? ''; // ordinalString value: '2nd'
 ```
 
-<img src="https://github.com/ZsomborRajki/ordinal_formatter/blob/main/images/Example_oridnal.png" width="320">
+<img src="https://raw.githubusercontent.com/ZsomborRajki/ordinal_formatter/b98e429ac72bbb56745cd7e56327673067620148/Example_oridnal.png">
 
 ## Usage
 ```dart
