@@ -1,6 +1,6 @@
 name: ordinal_formatter
 description: Ordinal formatter is a simple tool to covert numbers into their localised ordinal form. Example "2" -> "2nd"
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/ZsomborRajki/ordinal_formatter
 
 environment:

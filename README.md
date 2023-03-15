@@ -7,6 +7,8 @@ Example:
 final ordinalString = await OrdinalFormatter().format(2) ?? ''; // ordinalString value: '2nd'
 ```
 
+![Example image](images/Example_oridnal.png?raw=true)
+
 ## Usage
 ```dart
 import 'package:ordinal_formatter/ordinal_formatter.dart';

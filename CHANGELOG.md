@@ -1,3 +1,7 @@
+## 0.0.6
+
+* add example image
+
 ## 0.0.5
 
 * update readme example
