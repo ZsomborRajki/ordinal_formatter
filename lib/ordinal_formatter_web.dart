@@ -9,21 +9,35 @@ import 'ordinal_formatter_platform_interface.dart';
 
 /// A web implementation of the OrdinalFormatterPlatform of the OrdinalFormatter plugin.
 class OrdinalFormatterWeb extends OrdinalFormatterPlatform {
-  final js.JsObject _ordinalFormatter;
-
-  /// Constructs a OrdinalFormatterWeb
-  OrdinalFormatterWeb(String locale)
-      : _ordinalFormatter = js.JsObject(js.context['Intl']['PluralRules'], [
-          locale,
-          {'type': 'ordinal'}
-        ]);
+  final defaultLocale = 'en';
 
   static void registerWith(Registrar registrar) {
-    OrdinalFormatterPlatform.instance = OrdinalFormatterWeb('en');
+    OrdinalFormatterPlatform.instance = OrdinalFormatterWeb();
   }
 
   @override
   Future<String?> format(int number, [String? localeCode]) async {
-    return _ordinalFormatter.callMethod('select', [number]);
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
+    final ordinalFormatter = js.JsObject(js.context['Intl']['PluralRules'], [
+      localeCode ?? defaultLocale,
+      {'type': 'ordinal'}
+    ]);
+    
+    final ordinalRules = ordinalFormatter.callMethod('select', [number]);
+    //
+    final suffix = ordinalSuffixes[localeCode ?? defaultLocale]?[ordinalRules];
+    return '$number$suffix';
   }
+
+  // Localized ordinal documentation can be found at-
+  // https://www.unicode.org/cldr/charts/43/supplemental/language_plural_rules.html
+  final Map<String, Map<String, String>> ordinalSuffixes = {
+    "en": {
+      "one": "st",
+      "two": "nd",
+      "few": "rd",
+      "other": "th",
+    }
+    // Add more languages and suffixes as needed
+  };
 }
