@@ -24,6 +24,4 @@ try {
 ## Features
 - [X] iOS Support
 - [X] Android Support
-
-## TODO
-- web support
+- [X] Web support
