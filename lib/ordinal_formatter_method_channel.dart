@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
-import 'ordinal_formatter_platform_interface.dart';
+import 'package:ordinal_formatter/ordinal_formatter_platform_interface.dart';
 
 /// An implementation of [OrdinalFormatterPlatform] that uses method channels.
 class MethodChannelOrdinalFormatter extends OrdinalFormatterPlatform {

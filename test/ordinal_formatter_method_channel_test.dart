@@ -3,16 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ordinal_formatter/ordinal_formatter_method_channel.dart';
 
 void main() {
-  MethodChannelOrdinalFormatter platform = MethodChannelOrdinalFormatter();
-  const MethodChannel channel = MethodChannel('ordinal_formatter');
+  final platform = MethodChannelOrdinalFormatter();
+  const channel = MethodChannel('ordinal_formatter');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-        .setMockMethodCallHandler(channel, (message) async {
-      return '42nd';
-    });
+        .setMockMethodCallHandler(channel, (message) async => '42nd');
   });
 
   tearDown(() {

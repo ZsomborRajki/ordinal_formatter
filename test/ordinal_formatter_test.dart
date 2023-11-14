@@ -8,22 +8,19 @@ class MockOrdinalFormatterPlatform
     with MockPlatformInterfaceMixin
     implements OrdinalFormatterPlatform {
   @override
-  Future<String?> format(int number, [String? localeCode]) async {
-    return '42nd';
-  }
+  Future<String?> format(int number, [String? localeCode]) async => '42nd';
 }
 
 void main() {
-  final OrdinalFormatterPlatform initialPlatform =
-      OrdinalFormatterPlatform.instance;
+  final initialPlatform = OrdinalFormatterPlatform.instance;
 
   test('$MethodChannelOrdinalFormatter is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelOrdinalFormatter>());
   });
 
   test('format', () async {
-    OrdinalFormatter ordinalFormatterPlugin = OrdinalFormatter();
-    MockOrdinalFormatterPlatform fakePlatform = MockOrdinalFormatterPlatform();
+    final ordinalFormatterPlugin = OrdinalFormatter();
+    final fakePlatform = MockOrdinalFormatterPlatform();
     OrdinalFormatterPlatform.instance = fakePlatform;
 
     expect(await ordinalFormatterPlugin.format(2), '42nd');
