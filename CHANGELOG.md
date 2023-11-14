@@ -1,3 +1,7 @@
+## 0.1.0
+
+* add web support
+
 ## 0.0.8
 
 * cdn image url
