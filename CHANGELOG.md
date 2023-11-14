@@ -1,3 +1,7 @@
+## 0.1.1
+
+* add linter rules
+
 ## 0.1.0
 
 * add web support
