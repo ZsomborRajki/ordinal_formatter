@@ -21,19 +21,29 @@ class OrdinalFormatterWeb extends OrdinalFormatterPlatform {
   @override
   Future<String?> format(int number, [String? localeCode]) async {
     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules
+    final locale = localeCode ?? defaultLocale;
+    final ordinalRules = getOrdinalRules(number, locale);
+    final suffix = ordinalSuffixes[locale]?[ordinalRules];
+    if (suffix == null) {
+      return null;
+    }
+    return '$number$suffix';
+  }
+
+  String? getOrdinalRules(int number, [String? localeCode]) {
     final ordinalFormatter = js.JsObject(
       js.context['Intl']['PluralRules'],
       [
         localeCode ?? defaultLocale,
-        {'type': 'ordinal'},
+        js.JsObject.jsify({'type': 'ordinal'}),
       ],
     );
 
     final ordinalRules = ordinalFormatter.callMethod('select', [number]);
-    //
-    final suffix = ordinalSuffixes[localeCode ?? defaultLocale]?[ordinalRules];
-    return '$number$suffix';
+
+    return ordinalRules;
   }
+  //
 
   // Localized ordinal documentation can be found at-
   // https://www.unicode.org/cldr/charts/43/supplemental/language_plural_rules.html
