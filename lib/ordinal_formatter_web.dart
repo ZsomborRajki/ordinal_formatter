@@ -43,7 +43,6 @@ class OrdinalFormatterWeb extends OrdinalFormatterPlatform {
 
     return ordinalRules;
   }
-  //
 
   // Localized ordinal documentation can be found at-
   // https://www.unicode.org/cldr/charts/43/supplemental/language_plural_rules.html
