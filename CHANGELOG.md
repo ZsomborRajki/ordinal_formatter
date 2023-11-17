@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fixed error where web was using cardinal instead of ordinal
+
 ## 0.1.1
 
 * add linter rules
