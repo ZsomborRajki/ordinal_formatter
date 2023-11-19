@@ -2,11 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ordinal_formatter/ordinal_formatter.dart';
 import 'package:ordinal_formatter/ordinal_formatter_method_channel.dart';
 import 'package:ordinal_formatter/ordinal_formatter_platform_interface.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockOrdinalFormatterPlatform
-    with MockPlatformInterfaceMixin
-    implements OrdinalFormatterPlatform {
+    extends OrdinalFormatterPlatform {
   @override
   Future<String?> format(int number, [String? localeCode]) async => '42nd';
 }
