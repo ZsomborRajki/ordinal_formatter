@@ -6,7 +6,10 @@
 
 import 'dart:js' as js;
 
-String? getOrdinalRules(int number, String localeCode) {
+String? getOrdinalRules(int number, String? localeCode) {
+  if (localeCode == null) {
+    return null;
+  }
   final ordinalFormatter = js.JsObject(
     js.context['Intl']['PluralRules'],
     [
