@@ -1,3 +1,7 @@
+## 0.1.3
+
+* add locale converion fallback login with web, add web tests
+
 ## 0.1.2
 
 * Fixed error where web was using cardinal instead of ordinal
