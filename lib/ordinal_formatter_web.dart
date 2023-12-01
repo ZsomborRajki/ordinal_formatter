@@ -5,7 +5,7 @@
 
 import 'package:ordinal_formatter/ordinal_formatter_platform_interface.dart';
 import 'package:ordinal_formatter/web/web_ordinal_rules_io.dart'
-    if (dart.library.js) 'package:ordinal_formatter/web/web_ordinal_rules.dart';
+    if (dart.library.js) 'package:ordinal_formatter/web/web_ordinal_rules_web.dart';
 
 /// A web implementation of the OrdinalFormatterPlatform of the
 /// OrdinalFormatter plugin.
@@ -39,11 +39,42 @@ class OrdinalFormatterWeb extends OrdinalFormatterPlatform {
   // Localized ordinal documentation can be found at-
   // https://www.unicode.org/cldr/charts/43/supplemental/language_plural_rules.html
   final Map<String, Map<String, String>> ordinalSuffixes = {
+    //English
     'en': {
       'one': 'st',
       'two': 'nd',
       'few': 'rd',
       'other': 'th',
+    },
+    //Afrikaans
+    'af': {
+      'other': 'e',
+    },
+    //Danish
+    'da': {
+      'other': '.',
+    },
+    //Dutch
+    'nl': {
+      'other': 'e',
+    },
+    //French
+    'fr': {
+      'one': 're',
+      'other': 'e',
+    },
+    //German
+    'de': {
+      'other': '.',
+    },
+    //Spanish
+    'es': {
+      'other': '.ª',
+    },
+    //Swedish
+    'sv': {
+      'one': ':a',
+      'other': ':e',
     },
     // Add more languages and suffixes as needed
   };
