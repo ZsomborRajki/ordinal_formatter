@@ -67,10 +67,6 @@ class OrdinalFormatterWeb extends OrdinalFormatterPlatform {
     'de': {
       'other': '.',
     },
-    //Spanish
-    'es': {
-      'other': '.ª',
-    },
     //Swedish
     'sv': {
       'one': ':a',
