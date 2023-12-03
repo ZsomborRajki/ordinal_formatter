@@ -1,3 +1,7 @@
+## 0.1.4
+
+* add additional languages for web
+
 ## 0.1.3
 
 * add locale converion fallback login with web, add web tests
